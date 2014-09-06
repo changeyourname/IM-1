@@ -9,7 +9,7 @@ class AdmCargoController extends \BaseController {
 	 */
 	public function index()
 	{
-        $secretaria = AdmSecretaria::all();
+        $secretaria = AdmCargo::all();
         return View::make('adm.cargo.index')
             ->with('cargo',$secretaria);            
 	}

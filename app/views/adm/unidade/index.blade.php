@@ -9,7 +9,7 @@
 </div>
 @endif
 <?php
-    $Grid = new DataGrid("Unidade","NOME,BAIRRO,ATIVO","nome,bairro,ativo",$unidadeAdm,"unidadeAdm","id_adm_unidade");
+    $Grid = new DataGrid("Unidade","NOME,BAIRRO,SECRETARIA,ATIVO","nome,bairro,AdmSecretaria|nome,ativo",$unidadeAdm,"unidadeAdm","id_adm_unidade");
     $Grid->SetVisualizar();
     $Grid->SetEditar();
     $Grid->SetExcluir();

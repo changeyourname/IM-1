@@ -39,14 +39,14 @@ class AdmUnidadeController extends \BaseController {
         $rules = array
         (
             'nome'                  =>'required',
-            'id_tipo_unidade'       =>'required',
+            'id_adm_tipo_unidade'       =>'required',
         );
         
         $validator = Validator::make(Input::all(),$rules);   
         
         if($validator->fails())
         {
-                return Redirect::to("adm.unidade.create")
+                return Redirect::to("unidadeAdm/create")
                     ->withErrors($validator)
                     ->withInput(Input::except('password'));     
         }else{
@@ -65,7 +65,7 @@ class AdmUnidadeController extends \BaseController {
             $unidade->save();
             
             Session::flash('message','Unidade criada com sucesso');
-            return Redirect::to('usuarios');
+            return Redirect::to('unidadeAdm');
                         
         }
 	}
@@ -114,7 +114,7 @@ class AdmUnidadeController extends \BaseController {
         $rules = array
         (
             'nome'                  =>'required',
-            'id_tipo_unidade'       =>'required',
+            'id_adm_tipo_unidade'       =>'required',
         );
         
         $validator = Validator::make(Input::all(),$rules);   

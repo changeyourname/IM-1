@@ -23,7 +23,7 @@
 
 <?php
     $Formulario->CriarForm("Usu&aacute;rio",$usuario);
-    $Formulario->CriarInputFile("Foto","img","/imagens/usuarios/");    
+    $Formulario->CriarInputFile("Foto","img","/upload/usuarios/");    
     $Formulario->CriarInputText("Nome","nome");
     $Formulario->CriarInputText("Data Nascimento","dt_nascimento","data");
     $Formulario->CriarInputText("Telefone","telefone","telefone");
@@ -33,7 +33,7 @@
     $Formulario->CriarInputSenha("Senha","password");
     $sexo = array("M"=>"Masculino","F"=>"Feminino");
     $Formulario->CriarSelect("Sexo","sexo",$sexo);    
-    $sistema = DB::table('tb_adm_sistema')->where("ativo","=","1")->orderBy('posicao','asc')->get();                     
+    $sistema = DB::table('tb_conf_sistema')->where("ativo","=","1")->orderBy('posicao','asc')->get();                     
     foreach($sistema as $sis)
     {
     ?>  
@@ -51,7 +51,7 @@
                     </tr>
                     <tbody>
                     <?php
-                    $modulo = DB::table('tb_adm_modulo')->where("id_adm_sistema","=",$sis->id_adm_sistema)->orderBy('posicao','asc')->get();                 
+                    $modulo = DB::table('tb_conf_modulo')->where("id_sistema","=",$sis->id_sistema)->orderBy('posicao','asc')->get();                 
                     foreach($modulo as $mod)
                     {                     
                     
@@ -61,7 +61,7 @@
                     $excluir    = 0;       
                     
                     $permissao = DB::table('tb_adm_permissao')
-                        ->where("id_adm_modulo","=",$mod->id_adm_modulo)
+                        ->where("id_adm_modulo","=",$mod->id_modulo)
                         ->where("id_adm_usuario","=",$usuario->id_adm_usuario)
                         ->get();                                              
                         foreach($permissao as $per)
@@ -77,21 +77,21 @@
                             <td align="center">
                                 <div class="flat-green single-row">
                                     <div class="radio ">                                        
-                                        <input name="mod[<?php echo $mod->id_adm_modulo ?>][visualizar]" type="checkbox" value="1" <?php echo (($visualizar)?'checked':'') ?>>
+                                        <input name="mod[<?php echo $mod->id_modulo ?>][visualizar]" type="checkbox" value="1" <?php echo (($visualizar)?'checked':'') ?>>
                                     </div>
                                 </div>
                             </td>
                             <td align="center">
                                 <div class="flat-green single-row">
                                     <div class="radio ">
-                                        <input name="mod[<?php echo $mod->id_adm_modulo ?>][inserir]" type="checkbox" value="1" <?php echo (($inserir)?'checked':'') ?>>
+                                        <input name="mod[<?php echo $mod->id_modulo ?>][inserir]" type="checkbox" value="1" <?php echo (($inserir)?'checked':'') ?>>
                                     </div>
                                 </div>
                             </td>
                             <td align="center">
                                 <div class="flat-green single-row">
                                     <div class="radio ">
-                                        <input name="mod[<?php echo $mod->id_adm_modulo ?>][editar]" type="checkbox" value="1" <?php echo (($editar)?'checked':'') ?>>
+                                        <input name="mod[<?php echo $mod->id_modulo ?>][editar]" type="checkbox" value="1" <?php echo (($editar)?'checked':'') ?>>
                                     </div>
                                 </div>
                                 
@@ -100,7 +100,7 @@
                             <td align="center">
                                 <div class="flat-green single-row">
                                     <div class="radio ">
-                                        <input name="mod[<?php echo $mod->id_adm_modulo ?>][excluir]" type="checkbox" value="1" <?php echo (($excluir)?'checked':'') ?>>
+                                        <input name="mod[<?php echo $mod->id_modulo ?>][excluir]" type="checkbox" value="1" <?php echo (($excluir)?'checked':'') ?>>
                                     </div>
                                 </div>
                             </td>

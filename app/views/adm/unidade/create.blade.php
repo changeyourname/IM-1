@@ -16,8 +16,10 @@
 <?php
     $Formulario->CriarForm("Unidade");
     $Formulario->CriarInputText("Nome","nome");
-    $roles = DB::table('tb_tipo_adm_unidade')->where('ativo','=','1')->lists('nome','id_tipo_adm_unidade');
-    $Formulario->CriarSelect("Tipo de Unidade","id_tipo_unidade",$roles);
+    $roles = DB::table('tb_adm_tipo_unidade')->where('ativo','=','1')->lists('nome','id_adm_tipo_unidade');
+    $Formulario->CriarSelect("Tipo de Unidade","id_adm_tipo_unidade",$roles);
+    $roles = DB::table('tb_adm_secretaria')->where('ativo','=','1')->lists('nome','id_adm_secretaria');
+    $Formulario->CriarSelect("Secretaria Responsavel","id_adm_secretaria",$roles);
     $Endereco = new Endereco();
     $Endereco->CriarEndereco();
     $Formulario->CriarInputCheckbox("Ativo","ativo");

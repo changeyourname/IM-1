@@ -122,7 +122,7 @@ $(function(){
              
                     $.ajax({
                           type: "POST",
-                          url: "UserVerificar",
+                          url: "logar",
                           data: { username: $("#user").val(), password: $("#senha").val() },
                           dataType: 'json'
                         })

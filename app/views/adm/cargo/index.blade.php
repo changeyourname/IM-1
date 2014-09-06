@@ -9,7 +9,7 @@
 </div>
 @endif
 <?php
-    $Grid = new DataGrid("Cargo","NOME,ATIVO","nome,ativo",$cargo,"cargo","id_adm_  cargo");
+    $Grid = new DataGrid("Cargo","NOME,ATIVO","nome,ativo",$cargo,"cargo","id_adm_cargo");
     $Grid->SetVisualizar();
     $Grid->SetEditar();
     $Grid->SetExcluir();

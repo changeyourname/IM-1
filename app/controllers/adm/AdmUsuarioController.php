@@ -17,7 +17,7 @@ class AdmUsuarioController extends \BaseController {
 
     public function Login()
     {
-        if(Auth::attempt(array('login'=>$_POST['username'],'password'=>$_POST['password']))){                                
+        if(\Auth::attempt(array('login'=>$_POST['username'],'password'=>$_POST['password']))){                                
             Session::put("IDUSUARIO",Auth::user()->id_usuario);
             $return_arr["status"]=1;                                                 
         }else{

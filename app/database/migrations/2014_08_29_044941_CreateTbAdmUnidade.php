@@ -17,6 +17,7 @@ class CreateTbAdmUnidade extends Migration {
 			//
             $table->increments("id_adm_unidade");
             $table->integer("id_adm_tipo_unidade");
+            $table->integer("id_adm_secretaria");
             $table->string("nome",255);       
             $table->string("cep",20)->nullable();
             $table->string("uf",2)->nullable();

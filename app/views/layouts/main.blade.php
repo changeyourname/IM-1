@@ -121,7 +121,7 @@
                         <a href="<?php echo (($sis->url!="")?$sis->url:'javascript:void(0)') ?>"><i class="fa <?php echo $sis->icone ?>"></i> <span><?php echo $sis->nome ?></span></a>
                             <ul class="sub-menu-list">
                             <?php
-                                $modulo = DB::table('tb_conf_modulo')->where("id_sistema","=",$sis->id_sistema)->get();           
+                                $modulo = DB::table('tb_conf_modulo')->where("id_sistema","=",$sis->id_sistema)->orderBy('posicao','asc')->get();           
                                 foreach ($modulo as $mod)
                                 {
                                     ?>
