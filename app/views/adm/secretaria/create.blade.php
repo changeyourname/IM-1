@@ -14,9 +14,11 @@
 </div>
 @endif
 <?php
-    $Formulario->CriarForm("Cargo");
+    $Formulario->CriarForm("Secretaria");
     $Formulario->CriarInputText("Nome","nome");
-    $Formulario->CriarTextArea("Descricao","descricao");                           
+    $Formulario->CriarInputText("Sigla","sigla");
+    $Endereco = new Endereco();
+    $Endereco->CriarEndereco();
     $Formulario->CriarInputCheckbox("Ativo","ativo");
     $Formulario->FinalizarForm("Salvar");
 ?>

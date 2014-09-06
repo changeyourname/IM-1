@@ -14,10 +14,18 @@
 </div>
 @endif
 <?php
-    $Formulario->CriarForm("Cargo");
+    $Formulario->CriarForm("Unidade");
     $Formulario->CriarInputText("Nome","nome");
-    $Formulario->CriarTextArea("Descricao","descricao");                           
+    $roles = DB::table('tb_tipo_adm_unidade')->where('ativo','=','1')->lists('nome','id_tipo_adm_unidade');
+    $Formulario->CriarSelect("Tipo de Unidade","id_tipo_unidade",$roles);
+    $Endereco = new Endereco();
+    $Endereco->CriarEndereco();
     $Formulario->CriarInputCheckbox("Ativo","ativo");
+    ?>
+    <div class="form-group"> 
+    
+    </div>
+    <?php
     $Formulario->FinalizarForm("Salvar");
 ?>
 @stop

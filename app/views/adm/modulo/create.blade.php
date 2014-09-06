@@ -14,10 +14,18 @@
 </div>
 @endif
 <?php
-    $Formulario->CriarForm("Cargo");
+    $Formulario->CriarForm("Sistema");
+    $roles = DB::table('tb_adm_sistema')->where('ativo','=','1')->lists('nome','id_adm_sistema');
+    $Formulario->CriarSelect("Sistema","id_adm_sistema",$roles);
     $Formulario->CriarInputText("Nome","nome");
-    $Formulario->CriarTextArea("Descricao","descricao");                           
+    $Formulario->CriarInputText("URL","url");    
+    $Formulario->CriarInputText("Icone","icone");    
     $Formulario->CriarInputCheckbox("Ativo","ativo");
+    ?>
+    <div class="form-group"> 
+    
+    </div>
+    <?php
     $Formulario->FinalizarForm("Salvar");
 ?>
 @stop

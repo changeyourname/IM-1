@@ -14,10 +14,16 @@
 </div>
 @endif
 <?php
-    $Formulario->CriarForm("Cargo");
+    $Formulario->CriarForm("Sistema");
     $Formulario->CriarInputText("Nome","nome");
-    $Formulario->CriarTextArea("Descricao","descricao");                           
+    $Formulario->CriarInputText("URL","url");    
+    $Formulario->CriarInputText("Icone","icone");    
     $Formulario->CriarInputCheckbox("Ativo","ativo");
+    ?>
+    <div class="form-group"> 
+    
+    </div>
+    <?php
     $Formulario->FinalizarForm("Salvar");
 ?>
 @stop
