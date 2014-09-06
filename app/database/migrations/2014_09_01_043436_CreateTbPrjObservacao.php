@@ -12,8 +12,8 @@ class CreateTbPrjObservacao extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('tb_prj_observacao', function(Blueprint $table)
-		{
+            Schema::create('tb_prj_observacao', function(Blueprint $table)
+            {
 			//
             $table->increments("id_prj_obsevacao");
             $table->integer("id_prj_projeto");
@@ -21,7 +21,7 @@ class CreateTbPrjObservacao extends Migration {
             $table->date("dt_obsercacao");
             $table->text("observacao");
             $table->timestamps();
-		});
+            });
 	}
 
 	/**

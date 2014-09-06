@@ -1,6 +1,6 @@
 <?php
 
-class AdmTelefoneUnidadeController extends \BaseController {
+class TipoUnidadeController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.

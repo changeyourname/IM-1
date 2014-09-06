@@ -1,6 +1,6 @@
 <?php
 
-class TipoUnidadeController extends \BaseController {
+class PrjProjetoController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.

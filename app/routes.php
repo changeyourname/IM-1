@@ -20,17 +20,21 @@ Route::get('/', function()
 
 
 //Admin
-Route::post('logar',array('uses'=>'AdmUsuarioController@Login'));
-Route::resource('usuario','AdmUsuarioController');    
-Route::resource('sistema','AdmSistemaController');    
-Route::resource('modulo','AdmModuloController');    
-Route::resource('unidadeAdm','AdmUnidadeController');
-Route::resource('cargo','AdmCargoController');
-Route::resource('secretaria','AdmSecretariaController');
+Route::post('/logar',array('uses'=>'AdmUsuarioController@Login'));
+Route::resource('/usuario','AdmUsuarioController');    
+Route::resource('/sistema','AdmSistemaController');    
+Route::resource('/modulo','AdmModuloController');    
+Route::resource('/unidadeAdm','AdmUnidadeController');
+Route::resource('/cargo','AdmCargoController');
+Route::resource('/secretaria','AdmSecretariaController');
 
-
+//Geral
 Route::post('cep',array('uses'=>'EnderecoController@BuscaCep'));
 Route::post('geo',array('uses'=>'EnderecoController@GeoLocalizacao'));
+
+
+//PRJ
+Route::resource('projeto','PrjProjetoController');
 
 
 App::missing(function($exception)

@@ -12,9 +12,9 @@ class CreateTbPrjTarefa extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('tb_prj_tarefa', function(Blueprint $table)
-		{
-			//
+            Schema::create('tb_prj_tarefa', function(Blueprint $table)
+            {
+                    //
             $table->increments("id_prj_tarefa");
             $table->integer("id_prj_etapa");
             $table->integer('id_adm_usuario');
@@ -29,8 +29,8 @@ class CreateTbPrjTarefa extends Migration {
             $table->integer("id_status");
             $table->integer("ativo")->nullable()->default(0);
             $table->timestamps();
-            
-		});
+
+            });
 	}
 
 	/**
