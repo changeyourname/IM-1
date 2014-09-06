@@ -15,7 +15,7 @@
 
 Route::get('/', function()
 {	
-    return View::make('login.index');
+    return View::make('admin.login.index');
 });
 
 
