@@ -7,12 +7,12 @@ class AdmUsuarioController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function index()
-	{
-        $usuario = AdmUsuario::all();
-        return View::make('adm.usuario.index')
-            ->with('usuario',$usuario);            
-	}
+    public function index()
+    {
+    $usuario = AdmUsuario::all();
+    return View::make('adm.usuario.index')
+        ->with('usuario',$usuario);            
+    }
     
 
     public function Login()

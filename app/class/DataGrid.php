@@ -77,14 +77,26 @@ class DataGrid
             <tr>
                 <?php                
                 foreach($this->campos as $c)
-                {
+                {                          
                     if($c=="ativo"){
                      ?>
-                        <td><?php echo utf8_encode((($value->$c==1)?'Sim':'Não')); ?></td>
+                        <td><?php echo utf8_encode((($value->$c==1)?'Sim':'Nï¿½o')); ?></td>
                     <?php   
                     }else{
                      ?>
-                        <td><?php echo $value->$c ?></td>
+                        <td>
+                            <?php 
+                            
+                            if(strrpos($c,'|')>0)
+                            {
+                                $novo = explode("|",$c);                                
+                                $obje = $value->$novo[0];                                
+                                echo $obje[$novo[1]];
+                            }else{                            
+                                echo $value->$c ;
+                            }
+                            ?>
+                        </td>
                     <?php   
                     }
                 }        

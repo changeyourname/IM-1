@@ -15,15 +15,17 @@
 
 Route::get('/', function()
 {	
-    return View::make('admin.login.index');
+    return View::make('adm.login.index');
 });
+
+//Conf
+Route::resource('/sistema','ConfSistemaController');    
+Route::resource('/modulo','ConfModuloController');    
 
 
 //Admin
 Route::post('/logar',array('uses'=>'AdmUsuarioController@Login'));
 Route::resource('/usuario','AdmUsuarioController');    
-Route::resource('/sistema','AdmSistemaController');    
-Route::resource('/modulo','AdmModuloController');    
 Route::resource('/unidadeAdm','AdmUnidadeController');
 Route::resource('/cargo','AdmCargoController');
 Route::resource('/secretaria','AdmSecretariaController');

@@ -8,8 +8,8 @@
     <div class="alert-info">{{Session::get('message')}}</div>
 </div>
 @endif
-<?php
-    $Grid = new DataGrid("Modulo","NOME,SISTEMA,ICONE,ATIVO","nome,id_adm_sistema,icone,ativo",$modulo,"modulo","id_adm_modulo");
+<?php        
+    $Grid = new DataGrid("Modulo","NOME,SISTEMA,ICONE,ATIVO","nome,ConfSistema|nome,icone,ativo",$modulo,"modulo","id_modulo");
     $Grid->SetVisualizar();
     $Grid->SetEditar();
     $Grid->SetExcluir();

@@ -1,6 +1,6 @@
 <?php
 
-class AdmModuloController extends \BaseController {
+class ConfModuloController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -10,8 +10,8 @@ class AdmModuloController extends \BaseController {
 	public function index()
 	{
 		//
-        $modulo = AdmModulo::all();
-        return View::make("adm.modulo.index")
+        $modulo = ConfModulo::all();
+        return View::make("conf.modulo.index")
                 ->with("modulo",$modulo);
 	}
 
@@ -24,7 +24,7 @@ class AdmModuloController extends \BaseController {
 	public function create()
 	{
 		//
-        return View::make("adm.modulo.create");
+        return View::make("conf.modulo.create");
           
 	}
 
@@ -40,7 +40,7 @@ class AdmModuloController extends \BaseController {
         $rules  = array
         (
         'nome'          =>'required',
-        'id_adm_sistema'    =>'required',
+        'id_sistema'    =>'required',
         'icone'         =>'required',
         );
         $validator = Validator::make(Input::all(),$rules);
@@ -54,7 +54,7 @@ class AdmModuloController extends \BaseController {
             
            $naoProcessar = array("_token","_method");
             
-           $modulo              = new AdmModulo;
+           $modulo              = new ConfModulo;
            $modulo->ativo       = Input::get("ativo");
            foreach($_POST as $keys=>$values)
             {
@@ -80,8 +80,8 @@ class AdmModuloController extends \BaseController {
 	public function show($id)
 	{
 		//
-        $modulo = AdmModulo::find($id);
-        return View::make("adm.modulo.show")
+        $modulo = ConfModulo::find($id);
+        return View::make("conf.modulo.show")
                 ->with("modulo",$modulo);
 	}
 
@@ -95,8 +95,8 @@ class AdmModuloController extends \BaseController {
 	public function edit($id)
 	{
 		//
-        $modulo = AdmModulo::find($id);
-        return View::make("adm.modulo.edit")
+        $modulo = ConfModulo::find($id);
+        return View::make("conf.modulo.edit")
                 ->with("modulo",$modulo);
 	}
 
@@ -113,7 +113,7 @@ class AdmModuloController extends \BaseController {
         $rules  = array
         (
         'nome'          =>'required',
-        'id_adm_sistema'    =>'required',
+        'id_sistema'    =>'required',
         'icone'         =>'required',
         );
         $validator = Validator::make(Input::all(),$rules);
@@ -127,7 +127,7 @@ class AdmModuloController extends \BaseController {
             
            $naoProcessar = array("_token","_method");
             
-           $modulo              = AdmModulo::find($id);
+           $modulo              = ConfModulo::find($id);
            $modulo->ativo       = Input::get("ativo");
            foreach($_POST as $keys=>$values)
             {

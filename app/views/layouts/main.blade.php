@@ -104,24 +104,24 @@
                 $caminho = $acao;
             }
                     
-            $check = DB::table('tb_adm_modulo')->where("url","=",$caminho)->orderBy('posicao','asc')->get();                       
+            $check = DB::table('tb_conf_modulo')->where("url","=",$caminho)->orderBy('posicao','asc')->get();                       
             foreach ($check as $ch)
             {
-                $marcado = $ch->id_adm_sistema;
+                $marcado = $ch->id_sistema;
             }
             ?>
             <ul class="nav nav-pills nav-stacked custom-nav">
             
                 <?php 
-                    $sistema = DB::table('tb_adm_sistema')->where("ativo","=","1")->orderBy('posicao','asc')->get();           
+                    $sistema = DB::table('tb_conf_sistema')->where("ativo","=","1")->orderBy('posicao','asc')->get();           
                     foreach ($sistema as $sis)
                     {
                      ?>
-                     <li class="menu-list <?php echo (($sis->id_adm_sistema==$marcado)?'nav-active':'')?>">
+                     <li class="menu-list <?php echo (($sis->id_sistema==$marcado)?'nav-active':'')?>">
                         <a href="<?php echo (($sis->url!="")?$sis->url:'javascript:void(0)') ?>"><i class="fa <?php echo $sis->icone ?>"></i> <span><?php echo $sis->nome ?></span></a>
                             <ul class="sub-menu-list">
                             <?php
-                                $modulo = DB::table('tb_adm_modulo')->where("id_adm_sistema","=",$sis->id_adm_sistema)->get();           
+                                $modulo = DB::table('tb_conf_modulo')->where("id_sistema","=",$sis->id_sistema)->get();           
                                 foreach ($modulo as $mod)
                                 {
                                     ?>

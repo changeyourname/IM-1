@@ -1,6 +1,6 @@
 <?php
 
-class AdmSistemaController extends \BaseController {
+class ConfSistemaController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -10,8 +10,8 @@ class AdmSistemaController extends \BaseController {
 	public function index()
 	{
 		//
-        $sistema = AdmSistema::all();
-        return View::make('adm.sistema.index')
+        $sistema = ConfSistema::all();
+        return View::make('conf.sistema.index')
             ->with('sistema',$sistema); 
 	}
 
@@ -24,7 +24,7 @@ class AdmSistemaController extends \BaseController {
 	public function create()
 	{
 		//
-        return View::make('adm.sistema.create');
+        return View::make('conf.sistema.create');
 	}
 
 
@@ -52,7 +52,7 @@ class AdmSistemaController extends \BaseController {
             
             $naoProcessar = array("_token","_method");
             
-            $sistema            = new AdmSistema();
+            $sistema            = new ConfSistema();
             $sistema->ativo     = Input::get("ativo");
             foreach($_POST as $keys=>$values)
             {
@@ -78,8 +78,8 @@ class AdmSistemaController extends \BaseController {
 	public function show($id)
 	{
 		//
-        $sistema = AdmSistema::find($id);
-        return View::make('adm.sistema.show')
+        $sistema = ConfSistema::find($id);
+        return View::make('conf.sistema.show')
             ->with('sistema',$sistema);
 	}
 
@@ -93,8 +93,8 @@ class AdmSistemaController extends \BaseController {
 	public function edit($id)
 	{
 		//
-        $sistema = AdmSistema::find($id);
-        return View::make('adm.sistema.edit')
+        $sistema = ConfSistema::find($id);
+        return View::make('conf.sistema.edit')
             ->with('sistema',$sistema);
 	}
 
@@ -123,7 +123,7 @@ class AdmSistemaController extends \BaseController {
         }else{
             
             $naoProcessar = array("_token","_method");
-            $sistema     = AdmSistema::find($id);            
+            $sistema     = ConfSistema::find($id);            
             $sistema->ativo     = Input::get("ativo");
             foreach($_POST as $keys=>$values)
             {

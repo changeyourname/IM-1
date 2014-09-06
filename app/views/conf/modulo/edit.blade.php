@@ -15,8 +15,8 @@
 @endif
 <?php
     $Formulario->CriarForm("Sistema",$modulo);
-    $roles = DB::table('tb_adm_sistema')->where('ativo','=','1')->lists('nome','id_adm_sistema');
-    $Formulario->CriarSelect("Sistema","id_adm_sistema",$roles);
+    $roles = DB::table('tb_conf_sistema')->where('ativo','=','1')->lists('nome','id_sistema');
+    $Formulario->CriarSelect("Sistema","id_sistema",$roles);
     $Formulario->CriarInputText("Nome","nome");
     $Formulario->CriarInputText("URL","url");    
     $Formulario->CriarInputText("Icone","icone");    
